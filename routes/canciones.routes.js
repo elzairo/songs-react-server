@@ -10,7 +10,10 @@ router.get('/', songs.getSongs);
 router.post('/', songs.createSong);
 
 //Obtener una cancion R - Read
-router.get('/:id', songs.getSong);
+//router.get('/:id', songs.getSong);
+
+//Obtener una cancion R - Read
+router.get('/:titulo', songs.getSongName);
 
 //Actualizar una cancion
 router.put('/:id', songs.updateSong);

@@ -26,7 +26,15 @@ songController.getSong = async (req, res) =>{
     res.json(song);
 }; //Fin de getSong
 
-//Actualizar un Vehiculo
+//Consultar canciones por nombre
+songController.getSongName = async (req, res) => {
+    const song = await  Songs.find({titulo: new RegExp(req.params.titulo)}); // igual hacer busquedas en mondodb que /hol/ tecleando las primeras letra y parecido al LIKE de MYSQL
+    //const song = await Songs.find({titulo: req.params.titulo});
+    console.log(song);
+    res.json(song);
+}
+
+//Actualizar una cancion
 songController.updateSong = async (req, res) =>{
     const { id } = req.params;
     const cancion = {
